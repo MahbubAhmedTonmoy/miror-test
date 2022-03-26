@@ -1,0 +1,6 @@
+{
+    "connectionstring" : "mongodb://localhost:27017",
+    "dbname" : "netflix",
+    "collectionname" : "watchlist",
+    "port": 8080
+}
