@@ -10,15 +10,15 @@ import (
 type Config struct {
 	Port             string `mapstructure:"port"`
 	ConnectionString string `mapstructure:"connectionstring"`
-	dbName           string `mapstructure:"dbname"`
-	collcetionName   string `mapstructure:"collectionname"`
+	DbName           string `mapstructure:"dbname"`
+	CollcetionName   string `mapstructure:"collectionname"`
 }
 
 var AppConfig *Config
 
 func LoadAppConfig() {
 	fmt.Println("Loading Server Configurations...")
-	viper.AddConfigPath("C:/Users/Admin/OneDrive/Desktop/GoWorkPlace/MongoDb mux")
+	viper.AddConfigPath("./")
 	viper.SetConfigName("config")
 	viper.SetConfigType("json")
 	err := viper.ReadInConfig()
@@ -29,4 +29,5 @@ func LoadAppConfig() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	fmt.Println(*AppConfig)
 }

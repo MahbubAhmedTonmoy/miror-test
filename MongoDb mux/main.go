@@ -13,6 +13,6 @@ func main() {
 	service.LoadAppConfig()
 	r := router.Router()
 	fmt.Println("Server is getting started...")
-	log.Fatal(http.ListenAndServe(":8000", r))
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%v", service.AppConfig.Port), r))
 	fmt.Println("Listening at port 8000 ...")
 }
